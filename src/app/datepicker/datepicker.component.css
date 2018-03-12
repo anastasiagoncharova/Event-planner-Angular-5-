@@ -1,0 +1,60 @@
+.container {
+  width: 1230px;
+  max-width: 1240px;
+}
+.title, h5 {
+	text-align: center;
+  margin-top: 20px;
+}
+.form-control {
+	width: 30%;
+  margin: 20px auto;
+}
+.datepicker {
+  margin: 0 auto;
+  width: 60%;
+}
+.btn-success {
+  float: right;
+  margin: 20px 245px 0 0;
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range, .custom-day:hover {
+  background-color: rgb(2, 117, 216);
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgba(2, 117, 216, 0.5);
+}
+ul {
+  margin: 80px auto;
+  list-style-type: none;
+  padding: 0;
+  width: 40%;
+}
+ul li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: 15px;
+  padding: 10px;
+  height: 40px;
+  border-radius: 4px;
+  width: 750px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.event-name {
+  font-weight: bold;
+}

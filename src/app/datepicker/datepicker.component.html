@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="title">Event manager</h1>
+  <form #eventForm="ngForm" (ngSubmit)="addEvent(eventForm.value)">
+    <div class="form-group">
+      <h5>Event name</h5>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+    </div>
+    <h5>Event date range</h5>
+    <div class=datepicker>
+      <ngb-datepicker #dp ngModel [ngModelOptions]="{standalone: true}" (ngModelChange)="onDateChange($event)" [displayMonths]="3" [dayTemplate]="t">
+      </ngb-datepicker>
+      <ng-template #t let-date="date" let-focused="focused">
+        <span class="custom-day"
+          [class.focused]="focused"
+          [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+          [class.faded]="isHovered(date) || isInside(date)"
+          (mouseenter)="hoveredDate = date"
+          (mouseleave)="hoveredDate = null">
+          {{ date.day }}
+        </span>
+      </ng-template>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!eventForm.form.valid">Submit</button>
+  </form>
+</div>
+<ul>
+  <li *ngFor="let event of events">
+    <span><span class="event-name">{{ event.name }}</span> 
+    - from {{event.fromDate |  date :'fullDate'}} to {{event.toDate |  date :'fullDate' }}</span>
+  </li>
+</ul>
